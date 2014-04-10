@@ -1,4 +1,44 @@
 Destc::Application.routes.draw do
+  # Routes for the Message resource:
+  
+
+root 'messages#index'
+
+
+
+  # CREATE
+  get '/messages/new', controller: 'messages', action: 'new', as: 'new_message'
+  post '/messages', controller: 'messages', action: 'create', as: 'messages'
+
+  # READ
+  get '/messages', controller: 'messages', action: 'index'
+  get '/messages/:id', controller: 'messages', action: 'show', as: 'message'
+
+  # UPDATE
+  get '/messages/:id/edit', controller: 'messages', action: 'edit', as: 'edit_message'
+  patch '/messages/:id', controller: 'messages', action: 'update'
+
+  # DELETE
+  delete '/messages/:id', controller: 'messages', action: 'destroy'
+  #------------------------------
+
+  # Routes for the User resource:
+  # CREATE
+  get '/users/new', controller: 'users', action: 'new', as: 'new_user'
+  post '/users', controller: 'users', action: 'create', as: 'users'
+
+  # READ
+  get '/users', controller: 'users', action: 'index'
+  get '/users/:id', controller: 'users', action: 'show', as: 'user'
+
+  # UPDATE
+  get '/users/:id/edit', controller: 'users', action: 'edit', as: 'edit_user'
+  patch '/users/:id', controller: 'users', action: 'update'
+
+  # DELETE
+  delete '/users/:id', controller: 'users', action: 'destroy'
+  #------------------------------
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

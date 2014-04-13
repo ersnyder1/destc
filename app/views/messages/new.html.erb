@@ -1,6 +1,8 @@
 <div class="page-header">
-  <h1>New Message</h1>
+  <h1>Ask [Expertname] Anything!</h1>
 </div>
+
+##sender userid should autopopulate based off of logged in user; receiver userid and info should autopopulate based on person selected on prior tab bc their id was passed through
 
 <%= form_tag(messages_url, method: 'post', class: 'form-horizontal') do %>
   <div class="form-group">
@@ -26,7 +28,7 @@
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-6">
-      <%= submit_tag "Create Message", class: 'btn btn-primary' %>
+      <%= submit_tag "Send your question", class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>

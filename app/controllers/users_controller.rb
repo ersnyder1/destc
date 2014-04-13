@@ -61,4 +61,10 @@ class UsersController < ApplicationController
 
     redirect_to users_url, notice: "User deleted."
   end
+
+  def citypick 
+    @users = User.all
+  end
+
+
 end

@@ -12,7 +12,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @receiver = params[:receiver_userid]
     @message = Message.new
     @message.sender_userid = current_user.id
     @message.receiver_userid = params[:receiver_userid]

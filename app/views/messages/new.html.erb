@@ -2,13 +2,13 @@
   <h1>Send [Person] a message!</h1>
 </div>
 
-
+<h1>Message to <%= @user %></h1>
 
 ##sender userid should autopopulate based off of logged in user; receiver userid and info should autopopulate based on person selected on prior tab bc their id was passed through
 
 <%= form_tag(messages_url, method: 'post', class: 'form-horizontal') do %>
   
-<%= hidden_field_tag :receiver_userid, params[:id] %>
+<%= hidden_field_tag :receiver_userid, "2" %>
 
 
 

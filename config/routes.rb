@@ -1,4 +1,5 @@
 Destc::Application.routes.draw do
+  devise_for :users
   # Routes for the Message resource:
   
 
@@ -7,7 +8,7 @@ root 'messages#index'
 get '/citypick', controller: 'users', action: 'citypick'
 
   # CREATE
-  get '/messages/new', controller: 'messages', action: 'new', as: 'new_message'
+  get '/messages/:id/new', controller: 'messages', action: 'new', as: 'new_message'
   post '/messages', controller: 'messages', action: 'create', as: 'messages'
 
   # READ
@@ -29,6 +30,8 @@ get '/citypick', controller: 'users', action: 'citypick'
 
   # READ
   get '/users', controller: 'users', action: 'index'
+  #get("/users/:expertcity", { :controller => 'users', :action => 'filter'})
+
   get '/users/:id', controller: 'users', action: 'show', as: 'user'
 
   # UPDATE

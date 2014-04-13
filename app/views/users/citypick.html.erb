@@ -2,18 +2,17 @@
   <h1>What city are you traveling to?</h1>
 </div>
 
-<%= form_tag(users_url, method: 'post', class: 'form-horizontal') do %>
+<%= form_tag(users_url, method: 'get', class: 'form-horizontal') do %>
+ 
 
   <div class="form-group">
-    <%= label_tag :"", nil, class: 'col-md-0 control-label' %>
+    <%= label_tag :expertcity, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <select <%= text_field_tag :expertcity, nil, class: 'form-control' %>
-        <option value="Philadelphia">Philadelphia</option>
-        <option value="Baltimore">Baltimore</option>
-        <option value="New York">New York</option>
-       </select>
+      <%= select_tag :expertcity, options_from_collection_for_select(User.all, :expertcity, :expertcity),class: 'form-control' %>
     </div>
   </div>
+
+
 
     <div class="form-group">
     <div class="col-md-offset-0 col-md-6">

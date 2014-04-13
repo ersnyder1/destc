@@ -2,6 +2,17 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @users = User.where(expertcity: params[:expertcity], expert: "1")
+    @expertcity = params[:expertcity]
+  end
+
+  def show
+    @zodiac = params["sign"].capitalize
+  end
+
+
+  def citypick 
+    @user = User.all
   end
 
   def show
@@ -62,9 +73,6 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: "User deleted."
   end
 
-  def citypick 
-    @users = User.all
-  end
 
 
 end

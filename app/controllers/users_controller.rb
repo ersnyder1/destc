@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @zodiac = params["sign"].capitalize
+    @user = User.find_by(id: params[:id])
   end
 
 

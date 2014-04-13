@@ -1,14 +1,21 @@
 <div class="page-header">
-  <h1>What city are you traveling to?</h1>
+  <h3>What city are you traveling to?</h3>
 </div>
 
 <%= form_tag(users_url, method: 'get', class: 'form-horizontal') do %>
  
 
   <div class="form-group">
-    <%= label_tag :expertcity, nil, class: 'col-md-2 control-label' %>
+    <%= label_tag nil, nil, class: 'col-md-0 control-label' %>
     <div class="col-md-6">
-      <%= select_tag :expertcity, options_from_collection_for_select(User.all, :expertcity, :expertcity),class: 'form-control' %>
+
+    	<select <%= text_field_tag :expertcity, nil, class: 'form-control' %>
+        <option value="Philadelphia">Philadelphia</option>
+        <option value="Baltimore">Baltimore</option>
+       </select>
+
+
+
     </div>
   </div>
 

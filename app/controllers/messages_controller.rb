@@ -1,14 +1,17 @@
 class MessagesController < ApplicationController
 
   def index
-    @messages = Message.all
+    @messages = Message.where("user_id = ? or receiver_userid = ?", 
+      current_user.id, current_user.id)
   end
 
   def show
     @message = Message.find_by(id: params[:id])
+    @receiver= User.find_by(id: @message.receiver_userid)
   end
 
   def new
+    @receiver = User.find_by(id: params[:id])
   end
 
   def create

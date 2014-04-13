@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new
-    @message.sender_userid = current_user.id
+    @message.user_id = current_user.id
     @message.receiver_userid = params[:receiver_userid]
     @message.message = params[:message]
 
@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
 
   def update
     @message = Message.find_by(id: params[:id])
-    @message.sender_userid = params[:sender_userid]
+    @message.user_id = params[:sender_userid]
     @message.receiver_userid = params[:receiver_userid]
     @message.message = params[:message]
 

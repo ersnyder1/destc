@@ -17,7 +17,7 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= message.sender_userid %></td>
+        <td><%= message.user_id %></td>
         <td><%= message.receiver_userid %></td>
         <td><%= message.message %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, message_url(message), class: 'btn btn-primary' %></td>

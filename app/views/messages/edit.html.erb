@@ -4,9 +4,9 @@
 
 <%= form_tag(message_url(@message), method: 'patch', class: 'form-horizontal') do %>
   <div class="form-group">
-    <%= label_tag :sender_userid, nil, class: 'col-md-2 control-label' %>
+    <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :sender_userid, @message.sender_userid, class: 'form-control' %>
+      <%= number_field_tag :user_id, @message.user_id, class: 'form-control' %>
     </div>
   </div>
 

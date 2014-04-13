@@ -8,10 +8,7 @@
 
 <%= form_tag(messages_url, method: 'post', class: 'form-horizontal') do %>
   
-<%= hidden_field_tag :receiver_userid, "2" %>
-
-
-
+  <%= hidden_field_tag :receiver_userid, params[:id] %>
 
   <div class="form-group">
     <%= label_tag :message, nil, class: 'col-md-2 control-label' %>

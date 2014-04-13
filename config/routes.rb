@@ -6,6 +6,7 @@ Destc::Application.routes.draw do
 root 'messages#index'
 
 get '/citypick', controller: 'users', action: 'citypick'
+get '/conversations', controller: 'messages', action: 'conversation'
 
   # CREATE
   get '/messages/:id/new', controller: 'messages', action: 'new', as: 'new_message'

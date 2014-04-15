@@ -3,7 +3,7 @@ Destc::Application.routes.draw do
   # Routes for the Message resource:
   
 
-root 'messages#index'
+root 'users#citypick'
 
 get '/citypick', controller: 'users', action: 'citypick'
 get '/conversations', controller: 'messages', action: 'conversation'

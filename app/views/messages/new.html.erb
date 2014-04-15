@@ -5,6 +5,8 @@
   <h4>"<%= @receiver.bio %>"</h4>
 </div>
 
+
+
 <%= form_tag(messages_url, method: 'post', class: 'form-horizontal') do %>
   
   <%= hidden_field_tag :receiver_userid, params[:id] %>

@@ -3,5 +3,7 @@ class Message < ActiveRecord::Base
 belongs_to :user
 
 
-#validates :sender_userid, :presence => true
+validates :user_id, :presence => true
+validates :receiver_userid, :presence => true
+validates :message, :presence => true
 end

@@ -14,7 +14,6 @@ class MessagesController < ApplicationController
 
   def index
     @messages=Message.all
-
     @messages = Message.where("user_id = ? or receiver_userid = ?", 
       current_user.id, current_user.id)
   end
@@ -36,7 +35,7 @@ class MessagesController < ApplicationController
     @message.message = params[:message]
 
     if @message.save
-      redirect_to messages_url, notice: "Message created successfully."
+      redirect_to citypick_url, notice: "Message sent successfully- ask another!"
     else
       render 'new'
     end
@@ -53,7 +52,7 @@ class MessagesController < ApplicationController
     @message.message = params[:message]
 
     if @message.save
-      redirect_to messages_url, notice: "Message updated successfully."
+      redirect_to citypick_url, notice: "Message updated successfully."
     else
       render 'edit'
     end
@@ -63,6 +62,6 @@ class MessagesController < ApplicationController
     @message = Message.find_by(id: params[:id])
     @message.destroy
 
-    redirect_to messages_url, notice: "Message deleted."
+    redirect_to citypick_url, notice: "Message deleted."
   end
 end

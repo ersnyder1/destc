@@ -2,6 +2,17 @@
   <h1>Editing Message #<%= @message.id %></h1>
 </div>
 
+<% if @message.errors.any? %>
+  <ul>
+  <% @message.errors.full_messages.each do |m| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <ul><%= m %></ul>
+      </div>
+      <% end %>
+    </ul>
+    <% end %>
+
 <%= form_tag(message_url(@message), method: 'patch', class: 'form-horizontal') do %>
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>

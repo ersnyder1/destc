@@ -7,6 +7,7 @@ root 'messages#index'
 
 get '/citypick', controller: 'users', action: 'citypick'
 get '/conversations', controller: 'messages', action: 'conversation'
+get '/conversations/:id', controller: 'messages', action: 'thread' 
 
   # CREATE
   get '/messages/:id/new', controller: 'messages', action: 'new', as: 'new_message'

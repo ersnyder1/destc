@@ -17,6 +17,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @messages=Message.all
+
+    @messages = Message.where("user_id = ? or receiver_userid = ?", 
+      current_user.id, current_user.id).where("user_id = ? or receiver_userid = ?", 
+      @user.id, @user.id)
   end
 
   def new

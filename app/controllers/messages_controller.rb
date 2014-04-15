@@ -1,20 +1,23 @@
 class MessagesController < ApplicationController
 
 
-
-
   def conversation
+    @messages = Message.all
     @messages = Message.where("user_id = ? or receiver_userid = ?", 
       current_user.id, current_user.id)
     @receivers= User.where(user_id: @message, expert: "1")
   end
 
+   def thread
+    @messages = Message.all
+  end
+
   def index
+    @messages=Message.all
+
     @messages = Message.where("user_id = ? or receiver_userid = ?", 
       current_user.id, current_user.id)
   end
-
-
 
 
   def show

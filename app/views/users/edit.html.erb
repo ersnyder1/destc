@@ -24,12 +24,10 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <%= label_tag :admin, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= number_field_tag :admin, @user.admin, class: 'form-control' %>
-    </div>
-  </div>
+
+  
+      <%= hidden_field_tag :admin, @user.admin, class: 'form-control' %>
+
 
   <div class="form-group">
     <%= label_tag :expertcity, nil, class: 'col-md-2 control-label' %>

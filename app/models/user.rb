@@ -12,7 +12,7 @@ def full_name
 end
 
 validates :email, :presence => true
-#validates :lastname, :presence => true
-
+validates :lastname, :presence => true
+#validates :firstname, :presence => true
 
 end

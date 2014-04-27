@@ -1,0 +1,50 @@
+<h2>Join Destination Concierge!</h2>
+<div>
+(fields marked with ** are mandatory)
+</div>
+<br>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+ 
+
+ <% if @user.errors.any? %>
+  <ul>
+  <% @user.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <ul><%= message %></ul>
+      </div>
+      <% end %>
+    </ul>
+    <% end %>
+
+
+
+  <div><%= f.label :firstname %>**<br />
+  <%= f.text_field :firstname %></div>
+
+    <div><%= f.label :lastname %>**<br />
+  <%= f.text_field :lastname %></div>
+
+
+  <div><%= f.label :email %>**<br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %>**<br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %>**<br />
+  <%= f.password_field :password_confirmation %></div>
+
+      <div><%= f.label :gender %><br />
+  <%= f.text_field :gender %></div>
+
+        <div><%= f.label :age %><br />
+  <%= f.text_field :age %></div>
+
+  <br>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>

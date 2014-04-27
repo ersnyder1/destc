@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @messages = Message.where("user_id = ? or receiver_userid = ?", 
       current_user.id, current_user.id).where("user_id = ? or receiver_userid = ?", 
       @user.id, @user.id)
+    @receiver = User.find_by(id: params[:id])
   end
 
   def new

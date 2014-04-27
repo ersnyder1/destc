@@ -26,7 +26,24 @@
   </tbody>
 </table>
 
+<%= form_tag(messages_url, method: 'post', class: 'form-horizontal') do %>
+  
+  <%= hidden_field_tag :receiver_userid, params[:id] %>
 
+Send <%= @receiver.firstname %> a message!
+  <div class="form-group">
+    <%= label_tag nil, nil, class: 'col-md-0 control-label' %>
+    <div class="col-md-6">
+      <%= text_area_tag :message, nil, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-0 col-md-6">
+      <%= submit_tag "Send your message", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
 
 
 

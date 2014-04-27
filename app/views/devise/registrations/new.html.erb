@@ -36,11 +36,13 @@
   <div><%= f.label :password_confirmation %>**<br />
   <%= f.password_field :password_confirmation %></div>
 
-      <div><%= f.label :gender %><br />
+  <div><%= f.label :gender %><br />
   <%= f.text_field :gender %></div>
 
-        <div><%= f.label :age %><br />
+  <div><%= f.label :age %><br />
   <%= f.text_field :age %></div>
+
+<%= f.hidden_field :pictureurl, :value => "https://scontent-a-ord.xx.fbcdn.net/hphotos-frc1/t1.0-9/1001980_10154078038095387_6599513876733327554_n.jpg"  %>
 
   <br>
 

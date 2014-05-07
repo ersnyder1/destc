@@ -2,6 +2,20 @@
   <h1>Edit <%= @user.full_name %>'s Profile</h1>
 </div>
 
+<% if current_user.id == @user.id %>
+
+<% if @user.errors.any? %>
+  <ul>
+  <% @user.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <ul><%= message %></ul>
+      </div>
+      <% end %>
+    </ul>
+    <% end %>
+
+
 <%= form_tag(user_url(@user), method: 'patch', class: 'form-horizontal') do %>
   <div class="form-group">
     <%= label_tag :firstname, nil, class: 'col-md-2 control-label' %>
@@ -69,3 +83,9 @@
     </div>
   </div>
 <% end %>
+
+<% else%>
+<h3><b>You can't edit a profile that doesn't belong to you.</b></h3>
+
+<% end %>
+

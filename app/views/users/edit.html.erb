@@ -32,7 +32,15 @@
   </div>
   
       <%= hidden_field_tag :admin, @user.admin, class: 'form-control' %>
-      <%= hidden_field_tag :expert, @user.expert, class: 'form-control' %>
+      
+
+
+    <div class="form-group">
+    <%= label_tag :expert, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :expert, @user.expert, class: 'form-control' %>
+    </div>
+  </div>
 
 
   <div class="form-group">

@@ -6,6 +6,7 @@ Destc::Application.routes.draw do
 root 'users#citypick'
 
 get '/citypick', controller: 'users', action: 'citypick'
+get '/about', controller: 'users', action: 'about'
 get '/conversations', controller: 'messages', action: 'conversation'
 get '/conversations/:id', controller: 'messages', action: 'thread' 
 

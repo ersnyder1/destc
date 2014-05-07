@@ -14,6 +14,11 @@ class UsersController < ApplicationController
   def citypick 
     @user = User.all
   end
+  
+  def about
+  end
+
+
 
   def show
     @user = User.find_by(id: params[:id])

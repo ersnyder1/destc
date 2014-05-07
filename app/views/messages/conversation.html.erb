@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>Mailbox</h1>
+</div>
+
+<h3>See conversation with:</h3>
+      <div>
+<table> 
+   <% @messages.map(&:user).uniq.each do |m, i| %>
+      <tr> 
+         <td><%= i %></td> 
+         <td><%  if m.full_name != current_user.full_name %>
+            <%= link_to m.full_name, user_url(m.id) %>
+            <% end %></td> 
+      </tr> 
+   <% end %>
+</table>
+
+

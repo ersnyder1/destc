@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-#ruby '1.9.3p484'
+ruby '2.0.0'
 
 gem 'starter_generators'
 gem 'devise'

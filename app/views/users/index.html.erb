@@ -5,11 +5,12 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
+      <th></th>
+      <th></th>
       <th>Age</th>
       <th>Bio</th>
-      <th></th>
-      <th></th>
+      <th>Rating</th>
+      <th>Ask a Question</th>
       <th></th>
       <th></th>
     </tr>
@@ -18,10 +19,11 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag user.pictureurl, width: 100, class: "img-circle" %></td>
         <td><%= user.full_name %></td>
         <td><%= user.age %></td>
         <td><%= user.bio %></td>
-        <td><%= image_tag user.pictureurl, width: 100, class: "img-circle" %></td>
+        <td><%= user.phone %>% Positive</td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, new_message_url(user), class: 'btn btn-warning' %></td>
      
       </tr>

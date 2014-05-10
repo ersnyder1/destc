@@ -39,7 +39,7 @@ class MessagesController < ApplicationController
     @message.message = params[:message]
 
     if @message.save
-      redirect_to user_url(params[:receiver_userid]), notice: "Message sent successfully!"
+      redirect_to user_url(params[:receiver_userid]), notice: "Message sent successfully- we'll email when you get a reply!"
     else
       render 'new'
     end

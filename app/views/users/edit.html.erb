@@ -2,7 +2,7 @@
   <h1>Edit <%= @user.full_name %>'s Profile</h1>
 </div>
 
-<% if current_user.id == @user.id %> %>
+<% if current_user.id == @user.id %>
 
 <% if @user.errors.any? %>
   <ul>
@@ -18,42 +18,25 @@
 
 <%= form_tag(user_url(@user), method: 'patch', class: 'form-horizontal') do %>
   <div class="form-group">
-    <%= label_tag :firstname, nil, class: 'col-md-2 control-label' %>
+    <%= label_tag "First name", nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
       <%= text_field_tag :firstname, @user.firstname, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= label_tag :lastname, nil, class: 'col-md-2 control-label' %>
+    <%= label_tag "Last name", nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
       <%= text_field_tag :lastname, @user.lastname, class: 'form-control' %>
     </div>
   </div>
-  
  
-      
-   <div class="form-group">
-    <%= label_tag :admin, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= text_field_tag :admin, @user.admin, class: 'form-control' %>
-    </div>
-  </div>
-
-
-
-
-
-    <div class="form-group">
-    <%= label_tag :expert, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= text_field_tag :expert, @user.expert, class: 'form-control' %>
-    </div>
-  </div>
+ <%= hidden_field_tag :expert, @user.expert, class: 'form-control' %>
+ <%= hidden_field_tag :admin, @user.admin, class: 'form-control' %> 
 
 
   <div class="form-group">
-    <%= label_tag :expertcity, nil, class: 'col-md-2 control-label' %>
+    <%= label_tag "Home Town", nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
       <%= text_field_tag :expertcity, @user.expertcity, class: 'form-control' %>
     </div>
@@ -81,7 +64,7 @@
   </div>
 
   <div class="form-group">
-    <%= label_tag :pictureurl, nil, class: 'col-md-2 control-label' %>
+    <%= label_tag "Link to a photo of you", nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
       <%= text_field_tag :pictureurl, @user.pictureurl, class: 'form-control' %>
     </div>
@@ -96,7 +79,7 @@
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-6">
-      <%= submit_tag "Update User", class: 'btn btn-primary' %>
+      <%= submit_tag "Update Profile", class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>

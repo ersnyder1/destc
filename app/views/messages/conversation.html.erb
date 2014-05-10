@@ -2,7 +2,7 @@
   <h1>Expert Replies</h1>
 </div>
 
-<h3>See my conversation with:</h3>
+<h3>See replies from:</h3>
       <div>
 <table> 
    <% @messages.map(&:user).uniq.each do |m, i| %>
@@ -15,4 +15,8 @@
    <% end %>
 </table>
 
+
+
+<br>
+<i>If you don't see any names, sit tight! We'll email you as soon as an expert replies to one of your messages so you know to check back.</i>
 

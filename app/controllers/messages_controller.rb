@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   end
 
   def index 
-    if current_user.admin== "1"
+    if current_user.admin?
     @messages=Message.all
     else
     @messages=Message.all
